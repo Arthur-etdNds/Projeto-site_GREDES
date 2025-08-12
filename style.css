@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    background: #004b87;
+    color: white;
+    padding: 20px;
+}
+
+.logo {
+    max-width: 120px;
+}
+
+nav ul {
+    list-style: none;
+    background: #0077c2;
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.carrossel {
+    width: 100%;
+    overflow: hidden;
+}
+
+.carrossel img {
+    width: 100%;
+    display: block;
+}
+
+section {
+    padding: 20px;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    flex: 1;
+    padding: 20px;
+    background: #f2f2f2;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background: #e0f7fa;
+}
+
+footer {
+    background: #004b87;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
