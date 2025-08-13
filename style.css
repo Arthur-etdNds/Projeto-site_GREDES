@@ -1,73 +1,164 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Cabeçalho */
 header {
     text-align: center;
-    background: #004b87;
+    background: linear-gradient(135deg, #004b87, #0077c2);
     color: white;
-    padding: 20px;
+    padding: 30px 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
 .logo {
     max-width: 120px;
+    margin-bottom: 10px;
+}
+
+/* Menu */
+nav {
+    background: #0077c2;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 nav ul {
     list-style: none;
-    background: #0077c2;
-    padding: 10px;
-    margin: 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 5px 15px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-weight: 600;
+    padding: 8px 12px;
+    transition: background 0.3s;
 }
 
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+}
+
+/* Carrossel / Notícias */
 .carrossel {
-    width: 100%;
-    overflow: hidden;
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 15px;
 }
 
 .carrossel img {
     width: 100%;
-    display: block;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.carrossel img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* Seções */
 section {
-    padding: 20px;
+    padding: 30px 15px;
+    max-width: 1100px;
+    margin: auto;
 }
 
+h2 {
+    color: #004b87;
+    margin-bottom: 15px;
+    border-left: 6px solid #0077c2;
+    padding-left: 10px;
+}
+
+/* Cards */
 .cards {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
 .card {
-    flex: 1;
+    flex: 1 1 250px;
     padding: 20px;
-    background: #f2f2f2;
+    background: white;
     text-align: center;
-    transition: transform 0.3s;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
-    transform: scale(1.05);
-    background: #e0f7fa;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
+.card a {
+    text-decoration: none;
+    color: #0077c2;
+    font-weight: 600;
+}
+
+/* Lista de integrantes */
+#integrantes ul {
+    list-style: none;
+    padding: 0;
+}
+
+#integrantes li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Rodapé */
 footer {
     background: #004b87;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    .cards {
+        flex-direction: column;
+    }
+    header h1 {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2em;
+    }
+    .logo {
+        max-width: 80px;
+    }
 }
