@@ -11,6 +11,7 @@ body {
     color: #333;
 }
 
+
 /* Cabeçalho */
 header {
     text-align: center;
@@ -77,38 +78,34 @@ header {
 }
 
 .slides {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     display: flex;
-    width: 360px;
-    height: 400px;
     overflow: hidden;
-    position: relative;  
+    position: relative;
+    width: 683px;
 }
 
-/* @media (max-width:400px) {
+@media (max-width: 768px) {
     .slides {
         display: flex;
         width: 360px;
-        height: 100px;
+    
         overflow: hidden;
         position: relative;
     }
-} */
+}
 
 .slides-img {
     display: flex;
-    /* transition: transform .25s linear; */
     animation: slide-animation 6s linear 1s infinite normal ;
 }
 
-/* .slides-img img {
+.slides-img img {
     width: 100%;
     
-} */
+}
 
 .button-slides {
-    /* background-color: #00000080; */
-    /* border: 1px solid blue; */
     position: absolute;
     bottom: 0;
     display: flex;
@@ -131,27 +128,26 @@ label {
     cursor: pointer;
 }
 
-@media (screen) {
-    
-}
-
 input[type="radio"] {
     display: none;
 }
 
 #item1:checked ~ .slides-img  {
     /* content: url("imagens/slide1.png"); */
-    transform: translateX(0px);
+    /* transform: translateX(0px); */
+    transform: translateX(0);
 }
 
 #item2:checked ~ .slides-img  {
     /* content: url("imagens/slide2.png"); */
-    transform: translateX(-960px);
+    /* transform: translateX(-683px); */
+    transform: translateX(-100%);
 }
 
 #item3:checked ~ .slides-img  {
     /* content: url("imagens/slide3.png"); */
-    transform: translateX(-1920px);
+    /* transform: translateX(-1366px); */
+    transform: translateX(-200%);
 }
 
 #item1:checked ~ .button-slides label:nth-child(1),
@@ -159,31 +155,6 @@ input[type="radio"] {
 #item3:checked ~ .button-slides label:nth-child(3) {
     background-color: #333;
 }
-
-/* @keyframes slide-animation {
-    0%, {
-        transform: translateX(0);
-    }
-    50%{
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(-200%);
-    }
-} */
-
-/*     max-width: 1100px;
-    margin: 20px auto;
-    padding: 0 15px;
-} */
-
-/* .carrossel img {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 12px;
-    transition: transform 0.3s, box-shadow 0.3s;
-} */
 
 /* Seções */
 section {
