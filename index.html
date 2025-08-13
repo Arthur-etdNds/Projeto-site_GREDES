@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>G-REDES - Grupo de Pesquisa</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- Cabeçalho -->
@@ -15,7 +17,7 @@
     </header>
 
     <!-- Menu -->
-    <nav>
+    <nav class="menu">
         <ul>
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#projetos">Projetos</a></li>
@@ -28,16 +30,24 @@
     <!-- Carrossel (Básico) -->
     <section class="carrossel">
         <div class="slides">
-            <img src="imagens/slide1.jpg" alt="Notícia 1">
-            <img src="imagens/slide2.jpg" alt="Notícia 2">
-            <img src="imagens/slide3.jpg" alt="Notícia 3">
+            <div class="button-slides">
+                <label for="item1"><input type="radio" name="slide" id="item1"></label>
+                <label for="item2"><input type="radio" name="slide" id="item2"></label>
+                <label for="item3"><input type="radio" name="slide" id="item3"></label>
+            </div>
+            <div class="slides-img">
+                <img src="imagens/slide1.png" alt="Notícia 1">
+                <img src="imagens/slide2.png" alt="Notícia 2">
+                <img src="imagens/slide3.png" alt="Notícia 3">
+            </div>
         </div>
     </section>
 
     <!-- Sobre -->
     <section id="sobre">
         <h2>Sobre o G-REDES</h2>
-        <p>O G-REDES é o Grupo de Pesquisa em Redes de Computadores do IFTO, liderado pelo professor Cláudio de Castro Monteiro, atuando em pesquisas e projetos inovadores na área de redes de computadores.</p>
+        <p>O G-REDES é o Grupo de Pesquisa em Redes de Computadores do IFTO, liderado pelo professor Cláudio de Castro
+            Monteiro, atuando em pesquisas e projetos inovadores na área de redes de computadores.</p>
     </section>
 
     <!-- Projetos -->
@@ -77,4 +87,5 @@
     </footer>
 
 </body>
+
 </html>
