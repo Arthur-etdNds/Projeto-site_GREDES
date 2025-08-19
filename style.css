@@ -9,6 +9,8 @@ body {
     line-height: 1.6;
     background-color: #f8f9fa;
     color: #333;
+    flex-direction: column;
+    padding-bottom: 60px;
 }
 
 /* Cabeçalho */
@@ -23,6 +25,25 @@ header {
 .logo {
     max-width: 120px;
     margin-bottom: 10px;
+}
+
+header h1 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    font-size: clamp(1.4rem, 2.2vw + 0.8rem, 2.3rem);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    margin-top: 6px;
+}
+
+header h1::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 3px;
+    margin: 8px auto 0;
+    background: #b6d7f2;
+    border-radius: 2px;
 }
 
 /* Menu */
@@ -273,15 +294,314 @@ h2 {
     font-weight: 600;
 }
 
-/* Lista de integrantes */
-#integrantes ul {
-    list-style: none;
-    padding: 0;
+/* Imagem e descrição dos cards */
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
 }
 
-#integrantes li {
-    padding: 5px 0;
-    border-bottom: 1px solid #ddd;
+.card h3 {
+    margin: 6px 0 8px 0;
+    font-size: 1.05rem;
+}
+
+.card-desc {
+    color: #000;
+    font-size: 0.95rem;
+    opacity: 0;
+    max-height: 0;
+    transition: opacity 0.5s ease, max-height 0.4s cubic-bezier(.4, 0, .2, 1);
+    overflow: hidden;
+    margin-top: 0.7em;
+    pointer-events: none;
+}
+
+.card:hover .card-desc {
+    opacity: 1;
+    max-height: 10em;
+    pointer-events: auto;
+}
+
+/* Linhas de Pesquisa */
+#linhas {
+    padding-top: 20px;
+}
+#linhas ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+}
+#linhas li {
+    position: relative;
+    background: linear-gradient(135deg, #ffffff, #f5faff);
+    border: 1px solid #e2eef7;
+    border-radius: 12px;
+    padding: 14px 14px 14px 48px;
+    color: #0d2b45;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+    }
+#linhas li::before {
+    content: '🔬';
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+}
+#linhas li:nth-child(1)::before { content: '🔗'; }
+#linhas li:nth-child(2)::before { content: '📶'; }
+#linhas li:nth-child(3)::before { content: '🧭'; }
+#linhas li:nth-child(4)::before { content: '🏙️'; }
+#linhas li:nth-child(5)::before { content: '🎓'; }
+#linhas li:nth-child(6)::before { content: '☁️'; }
+
+/* Artigos/Publicações */
+.artigos-lista {
+    margin-top: 2.5em;
+    margin-bottom: 2em;
+    padding: 0 1em;
+}
+.artigos-lista h3 {
+    margin: 2em 0 0.7em 0;
+    font-weight: 600;
+    color: #004b87;
+    background: none;
+    font-size: 1.13em;
+}
+.artigos-lista ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.2em 0;
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+.artigos-lista li {
+    background: linear-gradient(95deg, #fafdff 0%, #eaf3fb 100%);
+    border: 1px solid #e2eef7;
+    border-radius: 9px;
+    padding: 20px 22px 17px 42px;
+    color: #154063;
+    font-size: 1em;
+    box-shadow: 0 3px 8px rgba(60,108,180,0.06);
+    transition: transform .18s, box-shadow .18s, border-color .18s;
+    position: relative;
+}
+.artigos-lista li::before {
+    content: '📄';
+    position: absolute;
+    left: 12px;
+    top: 20px;
+    font-size: 1.25em;
+    opacity: .92;
+}
+.artigos-lista li b {
+    color: #064a96;
+    font-weight: 600;
+    font-size: 1.01em;
+}
+.artigos-lista li i {
+    color: #2590e9;
+    font-style: normal;
+    font-weight: 500;
+}
+.artigos-lista li:hover {
+    transform: translateY(-2px) scale(1.015);
+    box-shadow: 0 8px 24px rgba(18,84,160,0.13);
+    border-color: #b6d7f2;
+    z-index: 2;
+}
+
+/* Contato */
+#faq {
+    background: linear-gradient(135deg, #ffffff, #f6fbff);
+    border: 1px solid #e3eef9;
+    border-radius: 12px;
+    padding: 18px 18px 8px 18px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+}
+#faq p {
+    position: relative;
+    padding: 12px 12px 12px 42px;
+    margin-bottom: 8px;
+    background: #fff;
+    border: 1px solid #e9f1fa;
+    border-radius: 10px;
+}
+#faq p::before {
+    content: '❓';
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+}
+#faq p:nth-of-type(2)::before { content: '👥'; }
+#faq strong { color: #064a96; }
+
+#contato-oficial {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    align-items: start;
+}
+#contato-oficial h2 {
+    grid-column: 1 / -1;
+    margin-bottom: 4px;
+}
+#contato-oficial p {
+    position: relative;
+    background: linear-gradient(135deg, #ffffff, #f8fbff);
+    border: 1px solid #e2eef7;
+    border-radius: 12px;
+    padding: 16px 16px 16px 48px;
+    color: #0d2b45;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+}
+#contato-oficial p::before {
+    content: 'ℹ️';
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+}
+#contato-oficial p:nth-of-type(1)::before { content: '✉️'; }
+#contato-oficial p:nth-of-type(2)::before { content: '☎️'; }
+#contato-oficial p:nth-of-type(3)::before { content: '📠'; }
+#contato-oficial p:nth-of-type(4)::before { content: '🔗'; }
+#contato-oficial p:nth-of-type(5)::before { content: '📍'; }
+#contato-oficial a {
+    color: #0077c2;
+    font-weight: 600;
+    text-decoration: none;
+}
+#contato-oficial a:hover { text-decoration: underline; }
+
+/* Integrantes */
+.cards-integrantes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card-integrantes-item {
+    flex: 1 1 30%;
+    max-width: 32%;
+    box-sizing: border-box;
+    padding: 20px;
+    background: white;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+
+}
+
+.card-integrantes-item a {
+    text-decoration: none;
+    color: #0077c2;
+    font-weight: 600;
+}
+
+.card-integrantes-item p {
+    text-decoration: none;
+    color: #0077c2;
+    font-weight: 600;
+}
+
+.card-integrantes-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card-integrantes-item img.foto_integrante {
+    max-width: 327px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 12px auto; 
+}
+
+.foto-integrantes img{
+    width: 100%;
+    max-width: 327px;
+    height: auto;
+}
+
+.integrante-titulo {
+    display: block;
+    font-size: 0.95em;
+    margin-top: 2px;
+    text-decoration: none;
+    color: #0077c2;
+    font-weight: 600;
+}
+
+/* Integrantes */
+.cards-integrantes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card-integrantes-item {
+    flex: 1 1 30%;
+    max-width: 32%;
+    box-sizing: border-box;
+    padding: 20px;
+    background: white;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+
+}
+
+.card-integrantes-item a {
+    text-decoration: none;
+    color: #0077c2;
+    font-weight: 600;
+}
+
+.card-integrantes-item p {
+    text-decoration: none;
+    color: #0077c2;
+    font-weight: 600;
+}
+
+.card-integrantes-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card-integrantes-item img.foto_integrante {
+    max-width: 327px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 12px auto;
+}
+
+.foto-integrantes img{
+    width: 100%;
+    max-width: 327px;
+    height: auto;
+}
+
+.integrante-titulo {
+    display: block;
+    font-size: 0.95em;
+    margin-top: 2px;
+    text-decoration: none;
+    color: #0077c2;
+    font-weight: 600;
 }
 
 /* Rodapé */
@@ -289,8 +609,15 @@ footer {
     background: #004b87;
     color: white;
     text-align: center;
-    padding: 15px;
-    margin-top: 20px;
+    padding: 0 15px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Responsividade */
@@ -301,16 +628,23 @@ footer {
     .cards {
         flex-direction: column;
     }
-    header h1 {
-        font-size: 1.4em;
-    }
 }
 
 @media (max-width: 480px) {
-    header h1 {
-        font-size: 1.2em;
-    }
     .logo {
         max-width: 80px;
+    }
+}
+
+@media (max-width: 900px) {
+    .card-integrantes-item {
+        max-width: 48%;
+        flex-basis: 48%;
+    }
+}
+@media (max-width: 600px) {
+    .card-integrantes-item {
+        max-width: 100%;
+        flex-basis: 100%;
     }
 }
