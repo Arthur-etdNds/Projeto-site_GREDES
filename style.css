@@ -9,6 +9,8 @@ body {
     line-height: 1.6;
     background-color: #f8f9fa;
     color: #333;
+    flex-direction: column;
+    padding-bottom: 60px;
 }
 
 
@@ -216,8 +218,15 @@ footer {
     background: #004b87;
     color: white;
     text-align: center;
-    padding: 15px;
-    margin-top: 20px;
+    padding: 0 15px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Responsividade */
