@@ -202,15 +202,64 @@ h2 {
     font-weight: 600;
 }
 
-/* Lista de integrantes */
-#integrantes ul {
-    list-style: none;
-    padding: 0;
+/* Integrantes */
+.cards-integrantes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-#integrantes li {
-    padding: 5px 0;
-    border-bottom: 1px solid #ddd;
+.card-integrantes-item {
+    flex: 1 1 30%;
+    max-width: 32%;
+    box-sizing: border-box;
+    padding: 20px;
+    background: white;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+
+}
+
+.card-integrantes-item a {
+    text-decoration: none;
+    color: #0077c2;
+    font-weight: 600;
+}
+
+.card-integrantes-item p {
+    text-decoration: none;
+    color: #0077c2;
+    font-weight: 600;
+}
+
+.card-integrantes-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card-integrantes-item img.foto_integrante {
+    max-width: 327px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 12px auto; /* adds space below image */
+}
+
+.foto-integrantes img{
+    width: 100%;
+    max-width: 327px;
+    height: auto;
+}
+
+.integrante-titulo {
+    display: block;
+    font-size: 0.95em;
+    margin-top: 2px;
+    text-decoration: none;
+    color: #0077c2;
+    font-weight: 600;
 }
 
 /* Rodapé */
@@ -248,5 +297,18 @@ footer {
     }
     .logo {
         max-width: 80px;
+    }
+}
+
+@media (max-width: 900px) {
+    .card-integrantes-item {
+        max-width: 48%;
+        flex-basis: 48%;
+    }
+}
+@media (max-width: 600px) {
+    .card-integrantes-item {
+        max-width: 100%;
+        flex-basis: 100%;
     }
 }
