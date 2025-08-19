@@ -44,7 +44,3 @@ Website institucional do G-REDES, grupo de pesquisa vinculado ao IFTO, focado em
 - HTML5
 - CSS3
 - [Poppins Google Fonts](https://fonts.google.com/specimen/Poppins)
-
-## 📢 Contato
-
-Dúvidas ou sugestões? Entre em contato pelo e-mail [ccm@ifto.edu.br](mailto:ccm@ifto.edu.br) ou consulte a aba “Contato” no site.
