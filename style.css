@@ -7,7 +7,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    background-color: #f8f9fa;
+    background-color: #f9fafb;
     color: #333;
     flex-direction: column;
     /* padding-bottom: 60px; */
@@ -28,6 +28,8 @@ header {
 }
 
 header h1 {
+    color: #fff;
+    border: none;
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1.25;
@@ -47,12 +49,68 @@ header h1::after {
 }
 
 /* Menu */
-.menu {
+.menu, .menu-barra {
     background: #0077c2;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.menu-barra, .ul-barra {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+    .menu-barra {
+        display: flex;
+        height: 2.5rem;
+    }
+}
+
+.menu-barra label {
+    /* border: 1px solid green; */
+    display: flex;
+    height: 100%;
+
+}
+
+.ul-barra {
+    /* border: 1px solid red; */
+    flex: 1;
+}
+
+#barra {
+    display: none;
+}
+
+#barra:checked ~ .ul-barra {
+    display: block;
+}
+
+.menu-barra label img {
+    width: 2rem;
+}
+
+.ul-barra ul  {
+    height: 100%;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ul-barra ul li {
+    padding: .25rem;   
+}
+
+.ul-barra ul li a {
+    color: #fff;
+    text-decoration: none;
+    
 }
 
 .menu ul {
@@ -82,7 +140,7 @@ header h1::after {
     transition: background 0.3s;
 }
 
-.menu ul li a:hover {
+.menu ul li a:hover, .ul-barra ul li a:hover {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 6px;
 }
@@ -196,11 +254,62 @@ section {
     margin: auto;
 }
 
-h2 {
+h2,h1 {
     color: #004b87;
     margin-bottom: 15px;
     border-left: 6px solid #0077c2;
     padding-left: 10px;
+}
+
+#sobre {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    #sobre {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3,auto);
+        gap: 1rem;
+    }
+}
+
+h3 {
+    color: #004b87;
+}
+
+.geral {
+    grid-row: span 2;
+}
+
+@media (max-width:768px) { 
+    .geral {
+        grid-row: 1;
+    }
+}
+
+.missao, .visao {
+    background-color: #ffffff9b;
+    border: 1px solid #ccc;
+    grid-column: 2;
+    padding: .5rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .missao, .visao {
+        grid-column: 1;
+    }
+}
+
+.missao img, .visao img {
+    width: 1.5rem;
 }
 
 /* Cards */
@@ -549,9 +658,6 @@ footer {
     color: white;
     text-align: center;
     padding: 0 15px;
-    /* position: fixed;
-    left: 0;
-    right: 0; */
     bottom: 0;
     height: 60px;
     display: flex;
@@ -561,9 +667,6 @@ footer {
 
 /* Responsividade */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
     .cards {
         flex-direction: column;
     }

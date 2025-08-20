@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <!-- Cabeçalho -->
     <header>
@@ -24,6 +25,19 @@
             <li><a href="artigos.html">Artigos</a></li>
             <li><a href="contato.html">Contato</a></li>
         </ul>
+    </nav>
+    <nav class="menu-barra">
+        <input type="checkbox" name="barra" id="barra">
+        <label for="barra" id="btn-barra"><img src="imagens/menu-cllr.svg" alt="Menu"></label>
+        <div class="ul-barra">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="integrantes.html">Integrantes</a></li>
+                <li><a href="artigos.html">Artigos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Carrossel / Notícias -->
@@ -46,9 +60,34 @@
 
     <!-- Sobre -->
     <section id="sobre">
-        <h2>Sobre o G-REDES</h2>
-        <p>O G-REDES é o Grupo de Pesquisa em Redes de Computadores do IFTO, liderado pelo professor Cláudio de Castro
-            Monteiro, atuando em pesquisas e projetos inovadores na área de redes de computadores.</p>
+        <div class="geral">
+            <h1>Sobre o G-REDES</h1>
+            <h3>Pesquisa em redes de computador</h3>
+            <p>O G-REDES é o Grupo de Pesquisa em Redes de Computadores do IFTO, liderado pelo professor Dr. Cláudio de
+                Castro Monteiro. Nosso objetivo é combinar teoria e prática para criar projetos inovadores na área de
+                redes de computadores.</p>
+            <br>
+            <p>Acreditamos que a pesquisa deve gerar soluções reais. Por isso, transformamos nosso conhecimento em
+                projetos com impacto no mercado e na sociedade. Se você quer fazer a diferença e contribuir para o
+                futuro da tecnologia, o G-REDES é o lugar certo para você.</p>
+        </div>
+        <div class="missao">
+            <h2 style="border: none; padding: 0; display: flex; gap: .75rem;">
+                <img src="imagens/target-icon.svg">
+                Missão
+            </h2>
+            <p>Promover a pesquisa e o desenvolvimento de soluções inovadoras em redes de computadores, capacitando
+                novos talentos e contribuindo para o avanço tecnológico.</p>
+        </div>
+        <div class="visao">
+            <h2 style="border: none; padding: 0; display: flex; gap: .75rem;">
+                <img src="imagens/academy-icon.svg" alt="Icóne de capelo">
+                Visão acadêmica
+            </h2>
+            <p>Tornar-se um polo de excelência em pesquisa e desenvolvimento, atraindo e formando os melhores
+                pesquisadores para enfrentar os desafios do futuro em redes de computadores.</p>
+        </div>
+
     </section>
 
     <!-- Repercussão -->
