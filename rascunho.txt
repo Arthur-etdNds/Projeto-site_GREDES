@@ -1,0 +1,129 @@
+/* Carrossel / Notícias */
+.carrossel {
+    /* border: 1px solid red; */
+    margin: 2rem auto 2rem auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;  
+    
+}
+
+.slides {
+    /* border: 1px solid green; */
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 683px;
+    height: 284px;
+}
+
+@media (max-width: 768px) {
+    .slides {
+        display: flex;
+        width: 360px;
+        overflow: hidden;
+        position: relative;
+    }
+}
+
+.slides-img {
+    display: flex;
+    /* animation: slide-news-animation 9s infinite alternate-reverse; */
+
+}
+
+.slides-img img {
+    position: absolute;
+    /* width: 683px;  */
+    width: 100%;
+}
+
+/* .slides-img img:nth-child(1) {
+    animation: slide-news1-animation-zIndex 9s infinite;
+}
+
+.slides-img img:nth-child(2) {
+    animation: slide-news2-animation-zIndex 9s infinite;
+}
+
+.slides-img img:nth-child(3) {
+    animation: slide-news3-animation-zIndex 9s infinite;
+} */
+
+.button-slides {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width: 100%;
+    gap: 1rem;
+    /* z-index: 1000; */
+}
+
+label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f3f390;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.button-slides:hover ~ .slides-img img{
+    animation: none;
+}
+
+.carrossel:hover ~ .slides-img img {
+    animation-play-state: paused;
+}
+
+#item1:checked ~ .slides-img img:nth-child(1) {
+    /* content: url("imagens/slide1.png"); */
+    /* transform: translateX(0px); */
+    /* transform: translateX(0); */
+    /* z-index: 300; */
+}
+
+#item2:checked ~ .slides-img img:nth-child(2) {
+    /* content: url("imagens/slide2.png"); */
+    /* transform: translateX(-683px); */
+    /* transform: translateX(-100%); */
+    /* z-index: 300; */
+}
+
+#item3:checked ~ .slides-img img:nth-child(3) {
+    animation: slide-animation timing-function delay iteration-count direction fill-mode;
+}
+
+#item1:checked ~ .button-slides label:nth-child(1),
+#item2:checked ~ .button-slides label:nth-child(2),
+#item3:checked ~ .button-slides label:nth-child(3) {
+    background-color: #333;
+}
+
+@keyframes slide-animation {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
