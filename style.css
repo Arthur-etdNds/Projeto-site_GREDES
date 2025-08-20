@@ -233,10 +233,6 @@ input[type="radio"] {
 .slides .slide:nth-child(3) {
     animation-delay: 6s;
 }
-.carrossel:hover .slide {
-    animation-play-state: paused;
-    /* opacity: 0; */
-}
 
 @keyframes slide-animation {
     0%   { opacity: 0; }
